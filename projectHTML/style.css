@@ -1,0 +1,111 @@
+/* Core Styling & Font */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'IBM Plex Mono', monospace;
+    margin: 0;
+    padding: 2em;
+    text-align: left;
+    position: relative;
+    overflow-x: hidden;
+    opacity: 0; /* Initially hide the body */
+    animation: fadeIn 1s ease-in forwards; /* Apply the fade-in animation */
+}
+
+/* @keyframes rule for the fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Background Pattern (Subtle Geometric Design) */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: 200vw;
+    height: 200vh;
+    background: 
+        radial-gradient(circle at 100% 100%, #e0e0e0 1px, transparent 1px) 0 0,
+        radial-gradient(circle at 0% 0%, #e0e0e0 1px, transparent 1px) 100% 100%;
+    background-size: 50px 50px;
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Headings and Typography */
+h1, h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+p, li {
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* List Item Design */
+li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 0.75em;
+}
+
+/* Futuristic "bullet" points with a faint glow */
+li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffc8, 0 0 10px #00ffc8, 0 0 15px #00ffc8;
+}
+
+/* Navigation */
+nav {
+    margin-top: 3em;
+    padding: 1em 0;
+    border-top: 1px solid #000000;
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-right: 2em;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Faint glow on hover */
+nav a:hover {
+    color: #555555;
+    text-shadow: 0 0 2px #555555;
+}
